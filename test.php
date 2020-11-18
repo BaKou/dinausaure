@@ -23,10 +23,10 @@ class Test{
         $this->nbTest++;
 
         if ($val !== $result){
-            echo "test $this->nbTest FAILED: $desc, expected: $result and got $val <br/>";
+            echo "Test $this->nbTest FAILED: $desc, expected: $result and got $val <br/>";
 
         }else {
-                echo "test $this->nbTest OK, duration: $duration sec, memory: $memory_used ko <br/>";
+                echo "Test $this->nbTest SUCCESS, duration: $duration sec, memory: $memory_used ko <br/>";
                 $this->nbSuccess++;
             }
         }
@@ -38,5 +38,6 @@ class Test{
         $this->execute(20000000,'30 27 17 42 12 14 41 42 42',6, "Should get an error: incorrect number ");
         $this->execute(10,'30 27 17 42 250000 12 14 41 42 42',6, "Should get an error: incorrect number ");
         $this->execute(-5,'30 27 17 42 25 12 14 41 42 42',6, "Should get an error: incorrect number ");
+        $this->execute('php','30 27 17 42 25 12 14 41 42 42',6, "Should get an error: incorrect number ");
     }
 }
